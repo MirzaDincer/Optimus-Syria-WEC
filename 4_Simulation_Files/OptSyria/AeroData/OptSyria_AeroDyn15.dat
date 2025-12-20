@@ -13,7 +13,7 @@ HS Flensburg WS2025 - Optimus Syria 5.0 MW  Wind Turbine (Onshore)
       False   CompAA          - Flag to compute AeroAcoustics calculation [used only when WakeMod = 1 or 2]
    "unused"   AA_InputFile    - AeroAcoustics input file [used only when CompAA=true]
 ======  Environmental Conditions  ===================================================================
-1.017                  AirDens     - Air density (kg/m^3)
+1.225                  AirDens     - Air density (kg/m^3)
 1.4775510204081632e-05 KinVisc     - Kinematic viscosity of working fluid (m^2/s)
 340.0                  SpdSound    - Speed of sound in working fluid (m/s)
 103500.0               Patm        - Atmospheric pressure (Pa) [used only when CavitCheck=True]
@@ -44,9 +44,12 @@ HS Flensburg WS2025 - Optimus Syria 5.0 MW  Wind Turbine (Onshore)
           3   InCol_Cd        - The column in the airfoil tables that contains the drag coefficient (-)
           4   InCol_Cm        - The column in the airfoil tables that contains the pitching-moment coefficient; use zero if there is no Cm column (-)
           0   InCol_Cpmin     - The column in the airfoil tables that contains the Cpmin coefficient; use zero if there is no Cpmin column (-)
-          8   NumAFfiles      - Number of airfoil files used (-)
+         11   NumAFfiles      - Number of airfoil files used (-)
 "OptSyria_Cylinder1.dat" AFNames       - Airfoil file names (NumAFfiles lines) (quoted strings)
 "OptSyria_D60B_V5.dat"
+"OptSyria_IP_T52.dat"
+"OptSyria_IP_T45.dat"
+"OptSyria_IP_T42.dat"
 "OptSyria_DU40_A17.dat"
 "OptSyria_DU35_A17.dat"
 "OptSyria_DU30_A17.dat"

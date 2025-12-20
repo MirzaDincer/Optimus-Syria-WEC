@@ -30,9 +30,9 @@ for v_i = 1:length(WindSpeed)% loop around each wind speed
     % ManipulateTXTFile('text file you want to edit','string you want to change','new string that you want to add')
     ManipulateTXTFile('OPTSyria5MW_Inflow.dat',currentWS,replacementWS); % edit the wind speed in inflow.dat file
 
-    dos(['openfast_x64.exe ',SimulationName,'.fst']); % run simulation
+    dos(['openfast_x64.exe ',SimulationName,'_FB.fst']); % run simulation
 
-    Results              = ReadFASTbinaryIntoStruct([SimulationName,'.outb']); % read the results
+    Results              = ReadFASTbinaryIntoStruct([SimulationName,'_FB.outb']); % read the results
 
     % plot
     figure('Name', ['WindSpeed ' num2str(WindSpeed(v_i))], 'NumberTitle', 'off');

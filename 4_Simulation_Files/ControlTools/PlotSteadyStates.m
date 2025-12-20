@@ -2,9 +2,8 @@
 clearvars;close all;clc;
 addpath(genpath('..\WetiMatlabFunctions'))
 
-load('..\OptSyria\SteadyStatesTable_Final.mat');
-% load('SteadyStates_ThetaMinusOne.mat');
-%%
+load('..\OptSyria\SteadyStatesTable_Final_v2.mat');
+%% TSR Calculation
 
 for i=1:length(SteadyStatesTable.mean_Wind1VelX)
     TSR(i) = rpm2radPs(SteadyStatesTable.mean_RotSpeed(i)) * 80 / SteadyStatesTable.mean_Wind1VelX(i); 
@@ -23,11 +22,11 @@ xmin = 2*ceil(ax.XLim(1)/2);
 xmax = 2*floor(ax.XLim(2)/2);
 xticks(ax, xmin:2:xmax);
 
-% figure('Name','TSR')
-% hold on;grid on;box on;
-% plot(SteadyStatesTable.WS,TSR,'.',MarkerSize=24)
-% xlabel('v_0 [m/s]')
-% ylabel('\TSR [-]')
+figure('Name','TSR')
+hold on;grid on;box on;
+plot(SteadyStatesTable.mean_Wind1VelX,TSR,'.',MarkerSize=24)
+xlabel('v_0 [m/s]')
+ylabel('TSR [-]')
 
 figure('Name','theta')
 hold on;grid on;box on;
@@ -42,7 +41,7 @@ xticks(ax, xmin:2:xmax);
 
 figure('Name','M_g')
 hold on;grid on;box on;
-plot(SteadyStatesTable.mean_Wind1VelX,SteadyStatesTable.("M_G [kNm]"),'.',MarkerSize=24)
+plot(SteadyStatesTable.mean_Wind1VelX,SteadyStatesTable.M_G,'.',MarkerSize=24)
 xlabel('v_0 [m/s]')
 ylabel('M_g [kNm]')
 
@@ -64,7 +63,7 @@ xticks(ax, xmin:2:xmax);
 
 figure('Name','P')
 hold on;grid on;box on;
-plot(SteadyStatesTable.mean_Wind1VelX,SteadyStatesTable.("P[kW]"),'.',MarkerSize=24)
+plot(SteadyStatesTable.mean_Wind1VelX,SteadyStatesTable.P,'.',MarkerSize=24)
 xlabel('v_0 [m/s]')
 ylabel('P [kW]')
 
@@ -75,7 +74,7 @@ xticks(ax, xmin:2:xmax);
 
 figure('Name','Torque Controller')
 hold on;grid on;box on;
-plot(SteadyStatesTable.mean_RotSpeed,SteadyStatesTable.("M_G [kNm]"),'-o',LineWidth=3)
+plot(SteadyStatesTable.mean_RotSpeed,SteadyStatesTable.M_G,'-o',LineWidth=3)
 xlabel('Omega [rpm]')
 ylabel('M_g [kNm]')
 
