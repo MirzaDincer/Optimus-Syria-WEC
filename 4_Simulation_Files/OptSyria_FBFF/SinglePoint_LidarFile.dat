@@ -14,7 +14,7 @@ False	Echo           					- Echo input data to <RootName>.ech (flag)
 180		YawAngle_N						- Yaw angle between the Nacelle and the lidar coordinate system [deg]
 12    	URef							- Mean u-component wind speed at the reference height [m/s]
 1       GatesPerBeam					- Amount of range gates for each los
-0.0125	t_measurement_interval			- Time between each measurement [s]
+0.005	t_measurement_interval			- Time between each measurement [s]
 ---------------------- Measuring points in Cartesian coordinates----------------
 0		NumberOfPoints_Cartesian		- Amounts of Points
 X-Tab 	Y-Tab 	Z-Tab

@@ -63,7 +63,7 @@ xlim([0 660])
 %% cost
 % cost display results
 RotSpeed_0  = 10;     % [rpm]
-TwrBsMyt_0  = 7.1383e+04;  % [kNm] 
+TwrBsMyt_0  = 8.0374e+04;  % [kNm] 
 t_Start     = 60;        % [s]
 
 % cost for feedback feedforward
