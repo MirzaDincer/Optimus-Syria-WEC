@@ -3,4 +3,4 @@
 !------- LIDAR TRAJECTORY -----------------------------------------------------
 4	     	! NumberOfBeams  	- Number of beams measuring at different directions [-]
 19.176      ! AngleToCenterline - Angle around centerline [deg]
-2 			! IndexGate  		- Index of range gates used in the LDP [-]
+3 			! IndexGate  		- Index of range gates used in the LDP [-]
