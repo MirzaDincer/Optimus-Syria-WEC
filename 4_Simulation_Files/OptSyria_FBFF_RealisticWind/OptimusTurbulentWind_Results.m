@@ -42,8 +42,8 @@ end
 WoehlerExponentSteel    = 4;
 
 for i = 1:nSeeds
-    FB_DEL(i) = CalculateDEL(FB{i}.TwrBsMyt, FB{i}.Time, WoehlerExponentSteel);
-    FBFF_DEL(i) = CalculateDEL(FBFF{i}.TwrBsMyt, FBFF{i}.Time, WoehlerExponentSteel);
+    FB_DEL(i) = CalculateDEL(FB{i}.TwrBsMyt(FB{i}.Time>=t_Start), FB{i}.Time(FB{i}.Time>=t_Start), WoehlerExponentSteel);
+    FBFF_DEL(i) = CalculateDEL(FBFF{i}.TwrBsMyt(FBFF{i}.Time>=t_Start), FBFF{i}.Time(FBFF{i}.Time>=t_Start), WoehlerExponentSteel);
 end
 
 for i = 1:nSeeds
@@ -62,17 +62,6 @@ end
 for i = 1:nSeeds
     fprintf("RPM STD for FB only seed%i: %.2f\n", i, rpmSTD_FB(i));
     fprintf("RPM STD for FBFF seed%i: %.2f\n\n", i, rpmSTD_FBFF(i));
-end
-
-% for TwrBsMyt
-for i = 1:nSeeds
-    TwrBsMyt_FB(i) = std(FB{i}.TwrBsMyt(FB{i}.Time>=t_Start));
-    TwrBsMyt_FBFF(i) = std(FBFF{i}.TwrBsMyt(FBFF{i}.Time>=t_Start));
-end
-
-for i = 1:nSeeds
-    fprintf("TwrBsMyt STD for FB only seed%i: %.2f\n", i, TwrBsMyt_FB(i));
-    fprintf("TwrBsMyt STD for FBFF seed%i: %.2f\n\n", i, TwrBsMyt_FBFF(i));
 end
 
 %% Rotor speed Power Spectral Density
